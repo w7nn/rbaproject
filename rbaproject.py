@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import time
 
-st.header("My first Streamlit App")
+st.header("RBA Project")
 
 option = st.sidebar.selectbox(
     'Select a mini project',
@@ -15,12 +15,8 @@ show = st.checkbox('I agree the terms and conditions')
 if show:
 
     if option=='line chart':
-        print(important_factors)
-        
-        chart_data = pd.DataFrame(
-        np.random.randn(20, 3),
-        columns=['a', 'b', 'c'])
 
+        chart_data = important_factors.DataFrame()
         st.line_chart(chart_data)
 
     elif option=='map':
@@ -50,6 +46,6 @@ if show:
    
             latest_iteration.text(f'Iteration {i+1}')
             bar.progress(i + 1)
-            time.sleep(0.1)
+            time.sleep(0.05)
 
             '...and now we\'re done!'
