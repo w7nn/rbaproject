@@ -14,7 +14,7 @@ st.write('Before you continue, please read the [terms and conditions](https://ww
 show = st.checkbox('I agree the terms and conditions')
 if show:
 
-        if option=='line chart':
+    if option=='line chart':
         chart_data = pd.DataFrame(
         np.random.randn(20, 3),
         columns=['a', 'b', 'c'])
