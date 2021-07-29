@@ -15,6 +15,8 @@ show = st.checkbox('I agree the terms and conditions')
 if show:
 
     if option=='line chart':
+        print(important_factors)
+        
         chart_data = pd.DataFrame(
         np.random.randn(20, 3),
         columns=['a', 'b', 'c'])
