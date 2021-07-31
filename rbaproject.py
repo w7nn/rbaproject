@@ -17,7 +17,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 
 st.title("Data Analytics Project by De Winn")
-'To Predict If a User Would Make a Hotel Bookings based on the Several Factors.'
+'To Predict if a User would make a Hotel Bookings based on the several factors.'
 option = st.sidebar.selectbox(
     'Select a Model',
      ['Decision Tree','KNN','SVM','The End'])
@@ -38,6 +38,11 @@ if show:
                 
                 '2) Ensure there are no Null'
                 st.write(df.isnull().sum())
+
+                st.set_option('deprecation.showPyplotGlobalUse', False)
+                sns.heatmap(df.corr());
+                st.pyplot()
+                
                 
                 '3) Let\'s take a look at our Label(y)'
                 '0 = No Booking; 1 = Booking'
@@ -46,6 +51,7 @@ if show:
 
                 image = Image.open(img_file_buffer)
                 img_array = np.array(image)
+                
 
                 if image is not None:
                     st.image(
@@ -64,6 +70,7 @@ if show:
                 
 
                 '5) Train Test Split'
+                '- Apply Standard Scaler'
                 X = df.drop('is_booking', axis=1)
                 y = df['is_booking']
 
